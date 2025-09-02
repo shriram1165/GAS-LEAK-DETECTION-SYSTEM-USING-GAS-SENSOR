@@ -62,8 +62,5 @@ Step 7: Save Your Work
 
    
 
-## Results:
+## Result:
 
-
-Result:
-The quality of air is measured using Gas Sensor MQ-2 with Arduino UNO Board/ESP-32 using Tinker CAD Verified Successfully.
