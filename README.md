@@ -1,3 +1,4 @@
+SHRIRAM.S(212222020027)
 # GAS-LEAK-DETECTION-SYSTEM-USING-GAS-SENSOR
 
 ## Aim:
@@ -10,11 +11,9 @@
   Gas sensor (MQ-2)
 	
 ## Circuit Diagram:
-
- 
-
-
-
+~~~
+<img width="948" height="749" alt="image" src="https://github.com/user-attachments/assets/c93b5193-95f7-410b-a4ed-2b4f3c14be4d" />
+~~~
 
 ## Theory :
  The Arduino Uno is powered by the ATmega328P, an 8-bit microcontroller that runs at 16 MHz. It has 32 KB of flash memory, 2 KB of SRAM, and 1 KB of EEPROM. The board 
@@ -57,10 +56,104 @@ Step 7: Save Your Work
 •	Save the Circuit: Click "Save" to keep your circuit design and code for future use.
 
 ## Program:
+~~~
+int LED = A1;          //Red LED
+int LED1 = A3;         //Green LED
+int gas_pin = A0;       // For Gas Sensor
+int buzzer_pin = A2;   // For Buzzer
 
+
+
+void setup() 
+{
+  Serial.begin(9600);
+  pinMode (buzzer_pin, OUTPUT);
+  pinMode (gas_pin, INPUT);
+}
+
+void loop() {
+  	float sensorValue,gas_pin;
+	sensorValue = analogRead(gas_pin); // read analog input pin 0
+
+
+  if(sensorValue >= 300)
+  {  
+    digitalWrite(LED,HIGH);
+    digitalWrite(LED1,LOW);
+
+    digitalWrite (buzzer_pin, HIGH);
+    //Serial.println();
+    Serial.print(sensorValue);
+    Serial.println(" |SMOKE DETECTED|");     
+  }
+  
+  else
+  {
+  	digitalWrite(LED,LOW);
+    digitalWrite(LED1,HIGH);
+    
+    digitalWrite (buzzer_pin, LOW);
+    Serial.println();
+    Serial.println("Sensor Value: ");
+    Serial.print(sensorValue);
+    //Serial.print(" |Safe Mode|");
+  } 
+ 
+  delay(1000);
+
+}
+	int LED = A1;          //Red LED
+int LED1 = A3;         //Green LED
+int gas_pin = A0;       // For Gas Sensor
+int buzzer_pin = A2;   // For Buzzer
+
+
+
+void setup() 
+{
+  Serial.begin(9600);
+  pinMode (buzzer_pin, OUTPUT);
+  pinMode (gas_pin, INPUT);
+}
+
+void loop() {
+  	float sensorValue,gas_pin;
+	sensorValue = analogRead(gas_pin); // read analog input pin 0
+
+
+  if(sensorValue >= 300)
+  {  
+    digitalWrite(LED,HIGH);
+    digitalWrite(LED1,LOW);
+
+    digitalWrite (buzzer_pin, HIGH);
+    //Serial.println();
+    Serial.print(sensorValue);
+    Serial.println(" |SMOKE DETECTED|");     
+  }
+  
+  else
+  {
+  	digitalWrite(LED,LOW);
+    digitalWrite(LED1,HIGH);
+    
+    digitalWrite (buzzer_pin, LOW);
+    Serial.println();
+    Serial.println("Sensor Value: ");
+    Serial.print(sensorValue);
+    //Serial.print(" |Safe Mode|");
+  } 
+ 
+  delay(1000);
+
+}
+~~~
 ## Output:
-
-   
+~~~
+https://go.screenpal.com/watch/cT6DD6nbU5l
+~~~
 
 ## Result:
-
+~~~
+Thus the air quality using Gas Sensor is measured using tinkercad
+~~~
